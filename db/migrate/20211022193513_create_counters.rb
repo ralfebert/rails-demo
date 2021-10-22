@@ -1,4 +1,4 @@
-class CreateCounters < ActiveRecord::Migration[6.0]
+class CreateCounters < ActiveRecord::Migration[6.1]
   def change
     create_table :counters do |t|
       t.string :name

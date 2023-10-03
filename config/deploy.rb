@@ -9,10 +9,10 @@ require 'mina/rvm'
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :application_name, 'rails-demo'
-set :domain, 'example.com'
+set :domain, '164.90.174.10'
 set :user, fetch(:application_name)
 set :deploy_to, "/home/#{fetch(:user)}/app"
-set :repository, 'git@github.com:example/rails-demo.git'
+set :repository, 'git@github.com:ralfebert/rails-demo.git'
 set :branch, 'master'
 set :rvm_use_path, '/etc/profile.d/rvm.sh'
 
@@ -80,7 +80,7 @@ task :deploy do
     invoke :'deploy:cleanup'
 
     on :launch do
-      # command "sudo systemctl restart #{fetch(:user)}"
+      command "sudo systemctl restart #{fetch(:user)}"
     end
   end
 
